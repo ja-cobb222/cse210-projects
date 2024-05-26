@@ -10,14 +10,15 @@ public class Journal
         entries = new List<Entry>();
     }
 
-    public void AddEntry(Entry entry)
+    public void AddEntry(string date, string prompt, string response)
     {
+        Entry entry = new Entry(date, prompt, response);
         entries.Add(entry);
     }
 
     public void DisplayEntries()
     {
-        foreach (var entry in entries)
+        foreach (Entry entry in entries)
         {
             Console.WriteLine(entry);
         }
